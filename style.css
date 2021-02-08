@@ -8,8 +8,41 @@
     border-radius: 10px;
     
 }
-
 .single-result img{
     width: 100%;
     border-radius: 10px;
+}
+.single-recipi{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 500px;
+    text-align: center;
+    padding: 10px;
+    display: inline-grid;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+.single-recipi img{
+    width: 100%;
+    border-radius: 10px;
+}
+.search{
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+#search-field{
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 30px;
+    width: 400px;
+    height: 20px;
+    padding: 10px;
+    margin: 10px;
+}
+.search-meal-btn{
+    border: none;
+    width: 80px;
+    border-radius: 20px;
+    display: inline-block;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

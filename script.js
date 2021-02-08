@@ -31,6 +31,7 @@ const displayMeals = meals => {
 //Ingredient part
 const getRecipi = (id) =>{
     const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
+    //Loading data from API
     fetch(url)
     .then(res => res.json())
     .then(data => displayIngredients(data.meals))

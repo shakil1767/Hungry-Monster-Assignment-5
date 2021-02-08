@@ -7,17 +7,20 @@
 </head>
 <link rel="stylesheet" href="style.css">
 <body>
-    <div class="wrap">
         <div class="search">
-            <input type="text" class="searchTerm" placeholder="What are you looking for?">
-            <button type="submit" class="searchButton">Search</button>
+            <input type="text" id="search-field" placeholder="What are you looking for?">
+            <button onclick="searchMeal()" class="search-meal-btn">Search</button>
         </div>
+
+    <div id="meal-container">
+    
     </div>
 
-    <div id="mealList"></div>
-    <div class="recipiInfo"></div>
+    <div id="recipi-container">
+
+    </div>
+    
 
     <script src="script.js"></script>
 </body>
-
 </html>

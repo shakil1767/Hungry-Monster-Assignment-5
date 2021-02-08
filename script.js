@@ -1,34 +1,34 @@
-fetch('https://www.themealdb.com/api/json/v1/1/search.php?s')
-.then(res => res.json())
-.then(data => displayMeals(data.meals))
+const searchMeal = () => {
+    const mealName = document.getElementById('search-field').value;
+    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`
+    //Loading data from API
+    fetch(url)
+        .then(res => res.json())
+        .then(data => displayMeals(data.meals))
+}
 
 const displayMeals = meals => {
-const mealsDiv = document.getElementById("mealList");
-for (let i = 0; i < meals.length; i++) {
-    const meal = meals[i];
-    const mealDiv = document.createElement("div");
-    mealDiv.className = "mealDiv";
-
-    const mealInfo = `
-        <img src="${meal.strMealThumb}"></img>
-        <h3> ${meal.strMeal} </h3>
-        <button onclick="getRecipi('${meal.strMeal}')">Recipi</button>
-    `
-    mealDiv.innerHTML = mealInfo;
-    mealsDiv.appendChild(mealDiv);
-}
-}
-
-const getRecipi = meal =>{
-const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${meal}`
- fetch(url)
-.then(res => res.json())
-.then(data => renderMealinfo(data[0]));
+    const mealContainer = document.getElementById("meal-container");
+    meals.forEach(meal => {
+        const mealDiv = document.createElement("div");
+        mealDiv.className = "single-result";
+        mealDiv.innerHTML = `
+        <div>
+            <img src="${meal.strMealThumb}"></img>
+            <h3>${meal.strMeal}</h3>
+        </div>
+        <div>
+            <button onclick="getRecipi('${meal.idMeal}')">Ingredients</button>
+        </div>
+        `;
+        mealContainer.appendChild(mealDiv);
+    });
 }
 
-const renderMealinfo = meals =>{
-const recipiDiv = document.getElementById("recipiInfo");
-recipiDiv.innerHTML = `
-    <h1>${meals.meal}</h1>
-`
+const getRecipi = (id) =>{
+    const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
+    // console.log(url);
+    fetch(url)
+    .then(res => res.json())
+    .then(data => console.log(data.meals[0].strIngredient2));
 }

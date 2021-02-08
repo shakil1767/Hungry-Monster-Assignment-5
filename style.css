@@ -1,30 +1,15 @@
-#mealList {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-#mealList img {
-    height: 60%;
-    width: 60%;
-    border-radius: 10px;
+.single-result{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.search {
-    width: 100%;
-    position: relative;
-    display: flex;
-    margin: 60px 20px;
-}
-
-.searchButton {
-    width: 80px;
-    height: 36px;
-    border: 1px solid #00B4CC;
-    background: #00B4CC;
+    width: 200px;
     text-align: center;
-    color: #fff;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    font-size: 20px;
+    margin: 20px;
+    padding: 10px;
+    display: inline-grid;
+    border-radius: 10px;
+    
+}
+
+.single-result img{
+    width: 100%;
+    border-radius: 10px;
 }
